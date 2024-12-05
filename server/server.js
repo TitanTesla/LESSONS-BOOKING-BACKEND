@@ -5,6 +5,7 @@ console.log('MONGO_URI:', process.env.MONGO_URI); // Log the MongoDB connection 
 
 // Import required modules
 const cors = require('cors'); // Middleware to enable Cross-Origin Resource Sharing
+const allowedOrigins = ['http://127.0.0.1:5500', 'https://titantesla.github.io'];
 const express = require('express'); // Framework for building web applications
 const lessonsRoutes = require('./routes/lessons'); // Import routes for handling lesson-related operations
 const ordersRoutes = require('./routes/orders'); // Import routes for handling order-related operations
@@ -16,10 +17,16 @@ const app = express();
 const PORT = process.env.PORT || 3000; // Set the port from environment variable or default to 3000
 
 // Enable CORS (Cross-Origin Resource Sharing) for the front-end application
+//This is Dynamic CORS handling for multiple origins
 app.use(cors({
-  origin: ['https://titantesla.github.io'] // allow request from GitHub Pages
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
 }));
-
 // Middleware
 app.use(logger); // Log all incoming requests to the console
 app.use(express.json()); // Automatically parse JSON data in request bodies
