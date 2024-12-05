@@ -11,7 +11,7 @@ const ordersRoutes = require('./routes/orders'); // Import routes for handling o
 const logger = require('./middleware/logger'); // Middleware for logging server requests
 const staticMiddleware = require('./middleware/static'); // Middleware for serving static files (e.g., images)
 
-// Initialize the Express app
+// Initializing the Express app
 const app = express();
 const PORT = process.env.PORT || 3000; // Set the port from environment variable or default to 3000
 
