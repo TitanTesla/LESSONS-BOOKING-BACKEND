@@ -1,3 +1,4 @@
+// This is a route that handles lessons
 // Import necessary modules
 const express = require('express'); // Framework for building web applications
 const { ObjectId } = require('mongodb'); // Utility for working with MongoDB Object IDs
