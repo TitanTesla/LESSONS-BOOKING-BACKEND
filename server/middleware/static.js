@@ -9,7 +9,7 @@ module.exports = (req, res) => {
 
   // Check if the request does not include a file name
   if (!fileName) {
-    res.status(400).send({ error: 'File name is required' }); // Respond with a 400 error
+    res.status(400).send({ error: 'File name is required' }); // Respond with a 400 error if no file name
     return;
   }
 
