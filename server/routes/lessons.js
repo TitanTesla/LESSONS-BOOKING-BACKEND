@@ -43,5 +43,5 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// Export the router to use it in the main server file
+// Export the router to use it in the main server file(server.js)
 module.exports = router;
