@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000; // Set the port from environment variable
 
 // Enable CORS (Cross-Origin Resource Sharing) for the front-end application
 app.use(cors({
-  origin: ['https://titantesla.github.io/LESSONS-BOOKING-FRONTEND/'] // Live Server URL used for the front-end
+  origin: ['https://titantesla.github.io'] // allow request from GitHub Pages
 }));
 
 // Middleware
