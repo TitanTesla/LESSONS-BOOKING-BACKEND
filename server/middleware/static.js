@@ -1,3 +1,4 @@
+// This file is used for handling images  
 const path = require('path'); // Required for working with file and directory paths
 const fs = require('fs'); // Required for file system operations
 
