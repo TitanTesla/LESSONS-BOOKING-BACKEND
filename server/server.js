@@ -1,3 +1,4 @@
+//This file runs the backend server
 // Load environment variables from a specified .env file
 require('dotenv').config({ path: './server/mongo.env' });
 console.log('MONGO_URI:', process.env.MONGO_URI); // Log the MongoDB connection URI (for debugging)
